@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment Interface</title>
+<link rel="stylesheet" href="ASSETS/css/paymentM.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <span class="hamburger" onclick="openMenu()">&#9776;</span>
+</div>
+
+<!-- Side Menu -->
+<div id="sideMenu" class="side-menu">
+    <span class="close-btn" onclick="closeMenu()">&times;</span>
+    <a href="landing.html">Home</a>
+    <a href="#">Profile</a>
+    <a href="paymentM.html">Payments</a>
+    <a href="settings.html">Settings</a>
+</div>
+
+<!-- Main Content -->
+<div class="container">
+    <h3>select payment method</h3>
+
+    <div class="payment-card" onclick="openPaymentForm('Orange Money')">
+        <img src="orange-money.png" alt="Orange Money">
+        <div>
+            <p>+237••••••••360</p>
+            <small>Expires: 12/26</small>
+        </div>
+    </div>
+
+    <div class="payment-card" onclick="openPaymentForm('MTN Mobile Money')">
+        <img src="mtn-money.png" alt="MTN Mobile Money">
+        <div>
+            <p>+237••••••••678</p>
+            <small>Expires: 12/26</small>
+        </div>
+    </div>
+
+    <button class="cashout-btn">cashout</button>
+</div>
+
+<!-- Payment Form Modal -->
+<div id="paymentModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        <h4 id="paymentTitle"></h4>
+        <form>
+            <label>Account Number</label>
+            <input type="text" placeholder="Enter account number" required>
+            <label>Amount</label>
+            <input type="number" placeholder="Enter amount" required>
+            <label>Password</label>
+            <input type="password" placeholder="Enter password" required>
+            <button type="submit">Confirm Payment</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    // Side Menu Functions
+    function openMenu() {
+        document.getElementById("sideMenu").style.width = "250px";
+    }
+    function closeMenu() {
+        document.getElementById("sideMenu").style.width = "0";
+    }
+
+    // Payment Modal Functions
+    function openPaymentForm(method) {
+        document.getElementById("paymentTitle").innerText = "Pay with " + method;
+        document.getElementById("paymentModal").style.display = "block";
+    }
+    function closeModal() {
+        document.getElementById("paymentModal").style.display = "none";
+    }
+</script>
+
+</body>
+</html>

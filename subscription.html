@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Subscription Interface</title>
+<link rel="stylesheet" href="ASSETS/css/subscription.css">
+</head>
+<body>
+
+<!-- Navigation -->
+<div class="navbar">
+    <span class="hamburger" onclick="openMenu()">&#9776;</span>
+    <div class="nav-icons">
+        <button>🔍</button>
+        <button>🔔</button>
+    </div>
+</div>
+
+<!-- Side Menu -->
+<div id="sideMenu" class="side-menu">
+    <span class="close-btn" onclick="closeMenu()">&times;</span>
+    <a href="landing.html">Home</a>
+    <a href="#">Profile</a>
+    <a href="subscription.html">Subscriptions</a>
+    <a href="#">Settings</a>
+</div>
+
+<!-- Main Content -->
+<div class="container">
+    <h3>subscribe</h3>
+
+    <div class="card">
+        <p>7 days free trial</p>
+        <button>Start Now</button>
+    </div>
+
+    <div class="card">
+        <p>Monthly subscription</p>
+        <strong>3,000 XAF</strong><br><br>
+        <button>Select</button>
+    </div>
+
+    <div class="card">
+        <p>Yearly subscription</p>
+        <strong>30,000 XAF</strong><br><br>
+        <button>Select</button>
+    </div>
+
+    <button class="pay-btn"><a href="paymentM.html">Pay Subscription</a></button>
+</div>
+
+<script>
+    function openMenu() {
+        document.getElementById("sideMenu").style.width = "250px";
+    }
+    function closeMenu() {
+        document.getElementById("sideMenu").style.width = "0";
+    }
+</script>
+
+</body>
+</html>
