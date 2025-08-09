@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sliding Sidebar Menu</title>
+  <link rel="stylesheet" href="ASSETS/css/tab bar.css" />
+  <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+</head>
+<script>
+    const sidebar = document.getElementById("sidebar");
+const hamburger = document.getElementById("hamburger");
+const closeBtn = document.getElementById("close-btn");
+
+hamburger.addEventListener("click", () => {
+  sidebar.style.left = "0";
+});
+
+closeBtn.addEventListener("click", () => {
+  sidebar.style.left = "-250px";
+});
+</script>
+
+<body>
+
+  <!-- Hamburger Icon -->
+  <div class="hamburger" id="hamburger">
+    &#9776;
+  </div>
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <div class="close-btn" id="close-btn">&times;</div>
+    <ul>
+      <li><i class="fas fa-home"></i> Home</li>
+      <li><i class="fas fa-user"></i> Profile</li>
+      <li><i class="fas fa-chair"></i> Find rides</li>
+      <li><i class="fas fa-info-circle"></i> About us</li>
+    </ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

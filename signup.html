@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>QuickRides Sign Up</title>
+  <link rel="stylesheet" href="ASSETS/css/signup.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  
+  <style>
+    .container {
+      height: 100vh; /* Full height of the viewport */
+      width: 100%; /* Full width of the viewport */
+      margin: auto;
+      padding: 20px;
+      background: url('ASSETS/images/form background.PNG') no-repeat center center;
+      background-size: cover;
+      border-radius: 12px;
+    }
+
+    html, body {
+      height: 100%; /* Make body take full height */
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      display: flex; /* Center the content */
+      justify-content: center;
+      align-items: center;
+    }
+
+
+
+  </style>
+
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      
+      <button class="back-btn" onclick="goBack()">← Back</button>
+      <script>
+        function goBack() {
+        window.history.back(); // Goes to the previous page
+        }
+      </script>
+
+      <img src="ASSETS/images/dark team logo.png" alt="QuickRides" class="logo">
+    </header>
+
+    <h1>Sign up</h1>
+
+    <form class="signup-form">
+      <input type="text" placeholder="Name" required>
+      <input type="email" placeholder="Email" required>
+
+      <div class="phone-container">
+        <div class="country-selector" onclick="toggleDropdown()">
+          <img id="selected-flag" src="https://flagcdn.com/w40/cm.png" alt="Flag">
+          <span id="selected-code">+237</span>
+          <span class="dropdown-arrow">▾</span>
+        </div>
+        <input type="tel" placeholder="Your mobile number" required>
+      </div>
+
+      <div class="dropdown" id="country-dropdown">
+        <div onclick="selectCountry('+237', 'https://flagcdn.com/w40/cm.png')">
+          <img src="https://flagcdn.com/w40/cm.png" alt=""> +237 Cameroon
+        </div>
+        <div onclick="selectCountry('+234', 'https://flagcdn.com/w40/ng.png')">
+          <img src="https://flagcdn.com/w40/ng.png" alt=""> +234 Nigeria
+        </div>
+        <div onclick="selectCountry('+254', 'https://flagcdn.com/w40/ke.png')">
+          <img src="https://flagcdn.com/w40/ke.png" alt=""> +254 Kenya
+        </div>
+        <div onclick="selectCountry('+1', 'https://flagcdn.com/w40/us.png')">
+          <img src="https://flagcdn.com/w40/us.png" alt=""> +1 USA
+        </div>
+      </div>
+
+      <select required>
+        <option value="">Gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+
+      <p class="terms">By signing up, you agree to the <a href="#">Terms of service</a> and <a href="#">Privacy policy</a>.</p>
+
+      <button type="submit" class="signup-btn">Sign Up</button>
+    </form>
+
+    <div class="divider">OR</div>
+
+    <div class="social-login">
+      <button class="social-btn gmail">G</button>
+      <button class="social-btn facebook">f</button>
+      <button class="social-btn apple"></button>
+    </div>
+
+    <p class="signin-link">Already have an account? <a href="signin.html">Sign in</a></p>
+  </div>
+
+  <script>
+    function toggleDropdown() {
+      const dropdown = document.getElementById('country-dropdown');
+      dropdown.classList.toggle('show');
+    }
+
+    function selectCountry(code, flag) {
+      document.getElementById('selected-code').textContent = code;
+      document.getElementById('selected-flag').src = flag;
+      document.getElementById('country-dropdown').classList.remove('show');
+    }
+
+    window.addEventListener('click', function(e) {
+      if (!e.target.closest('.phone-container')) {
+        document.getElementById('country-dropdown').classList.remove('show');
+      }
+    });
+  </script>
+</body>
+</html>

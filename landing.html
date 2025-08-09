@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quick Ride</title>
+  <link rel="stylesheet" href="ASSETS/css/landing.css">
+  <style>
+  </style>
+</head>
+<body>
+  <div class="container">
+    <button class="back-btn" style="background-color: transparent;
+    border: 2px solid #030303; /* Gold border to match theme */
+    color: #070707;
+    padding: 8px 16px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;" onclick="goBack()">← Back</button>
+    <script>
+      function goBack() {
+      window.history.back(); // Goes to the previous page
+      }
+    </script> 
+    <img src= "ASSETS/images/logo.png" alt="QuickRides Logo" class="logo" />
+    <h1>Quick ride</h1>
+    <p>Join our carpooling community and save time, reduce stress, and even make new friend on your daily commute.</p>
+    <button type="button" class="signup-btn" onclick="window.location.href='signup.html'">Passenger</button>
+    <button type="button" class="signup-btn" onclick="window.location.href='signup.html'">Driver</button>
+    <p class="signin">Already have an account? <a href="signin.html" class="act">Sign in</a></p>
+    <img src="ASSETS/images/A taxi.webp" alt="Taxi Car" class="car-img" />
+  </div>
+</body>
+</html>

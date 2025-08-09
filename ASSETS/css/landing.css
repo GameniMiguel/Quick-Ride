@@ -1,0 +1,106 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  body, html {
+    height: 100%;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(#f4ffe6, #cce500);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+
+  .container {
+    width: 90%;
+    max-width: 400px;
+    background-color: #d4e820;
+    padding: 20px;
+    border-radius: 10px;
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+  }
+  
+  
+  .logo {
+    width: 100px;
+    margin: 0 auto 1rem;
+    
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #000;
+  }
+  
+  p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    color: #333;
+  }
+
+  .back-btn:hover {
+    background-color: #FFD700;
+    color: #000;
+}
+  
+.signup-btn{
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 2px solid #000;
+    background: transparent;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .button:hover {
+    background-color: #000;
+  }
+  
+  .signin {
+    font-size: 0.9rem;
+  }
+  
+  .signin a {
+    color: #faf8f8;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .signup-btn {
+    color: #000;
+  }
+  .signup-btn:hover {
+    background-color: #000;
+    color: #ffffff;
+  }
+  .car-img {
+    margin-top: 2rem;
+    width: 100%;
+    max-width: 250px;
+  }
+  
+  @media (max-width: 500px) {
+    .container {
+      padding: 1.5rem;
+    }
+  
+    h1 {
+      font-size: 1.5rem;
+    }
+  
+    p {
+      font-size: 0.9rem;
+    }
+  }

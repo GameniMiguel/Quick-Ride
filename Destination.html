@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ride Publish Form</title>
+  <link href="ASSETS/css/Destination.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Google Map -->
+  <div id="map"></div>
+
+  <!-- UI Container -->
+  <div class="container">
+    <!-- Top bar -->
+    <div class="top-bar">
+      <span class="material-icons menu-icon">menu</span>
+      <div class="top-right-icons">
+        <span class="material-icons">location_on</span>
+        <span class="material-icons">location_on</span>
+      </div>
+    </div>
+
+    <!-- Form -->
+    <h2>Enter your</h2>
+    <form id="rideForm">
+      <div class="input-group">
+        <span class="material-icons">my_location</span>
+        <input type="text" id="pickup" placeholder="Pick up location" required>
+      </div>
+      <div class="input-group">
+        <span class="material-icons">place</span>
+        <input type="text" id="dropoff" placeholder="Drop-off location" required>
+      </div>
+      <div class="input-group">
+        <span class="material-icons">group</span>
+        <input type="number" id="seats" placeholder="Available seats" min="1" required>
+      </div>
+      <div class="input-group">
+        <span class="material-icons">attach_money</span>
+        <input type="number" id="price" placeholder="Price" required>
+      </div>
+      <button type="submit">Publish</button>
+    </form>
+  </div>
+
+  <!-- Google Maps Script -->
+  <script>
+    function initMap() {
+      new google.maps.Map(document.getElementById("map"), {
+        center: { lat: 3.848, lng: 11.502 }, // Example: Yaoundé, Cameroon
+        zoom: 13
+      });
+    }
+
+    // Handle form submission
+    document.getElementById("rideForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const data = {
+        pickup: document.getElementById("pickup").value,
+        dropoff: document.getElementById("dropoff").value,
+        seats: document.getElementById("seats").value,
+        price: document.getElementById("price").value
+      };
+      console.log("Ride Published:", data);
+      alert("Ride published successfully!");
+    });
+  </script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
+</body>
+</html>
