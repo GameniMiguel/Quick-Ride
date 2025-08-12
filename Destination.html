@@ -1,71 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ride Publish Form</title>
-  <link href="ASSETS/css/Destination.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Destination - QuickRide</title>
+    <link rel="stylesheet" href="ASSETS/css/Destination.css">
 </head>
 <body>
-  <!-- Google Map -->
-  <div id="map"></div>
 
-  <!-- UI Container -->
-  <div class="container">
-    <!-- Top bar -->
-    <div class="top-bar">
-      <span class="material-icons menu-icon">menu</span>
-      <div class="top-right-icons">
-        <span class="material-icons">location_on</span>
-        <span class="material-icons">location_on</span>
-      </div>
+    <!-- Top Bar -->
+    <header class="top-bar">
+        <button class="back-btn" onclick="goBack()">← Back</button>
+        <script>
+          function goBack() {
+          window.history.back(); // Goes to the previous page
+          }
+        </script> 
+        <img src="ASSETS/images/logo.png" alt="QuickRide Logo" class="logo">
+    </header>
+
+    <!-- Form Container -->
+    <main class="form-container">
+        <h2>Set Your Trip Details</h2>
+        <form>
+            <label for="pickup">Pickup Location</label>
+            <input type="text" id="pickup" placeholder="Enter pickup location" required>
+
+            <label for="dropoff">Drop-off Location</label>
+            <input type="text" id="dropoff" placeholder="Enter drop-off location" required>
+
+            <label for="seats">Number of Seats</label>
+            <input type="number" id="seats" placeholder="Enter number of seats" required>
+
+            <label for="price">Price (XAF)</label>
+            <input type="number" id="price" placeholder="Enter price" required>
+
+            <label for="driver">Driver Name</label>
+            <input type="text" id="driver" placeholder="Enter driver name" required>
+
+            <button type="submit" class="submit-btn">Save Trip</button>
+        </form>
+    </main>
+
+    <div class="bottom-nav">
+      <a href="Home.html"><i class="fas fa-home"></i><span>Home</span></a>
+      <a href="About us.html"><i class="fas fa-gem"></i><span>About us</span></a>
+      <a href="settings.html" class="active"><i class="fas fa-cog"></i><span>Settings</span></a>
     </div>
 
-    <!-- Form -->
-    <h2>Enter your</h2>
-    <form id="rideForm">
-      <div class="input-group">
-        <span class="material-icons">my_location</span>
-        <input type="text" id="pickup" placeholder="Pick up location" required>
-      </div>
-      <div class="input-group">
-        <span class="material-icons">place</span>
-        <input type="text" id="dropoff" placeholder="Drop-off location" required>
-      </div>
-      <div class="input-group">
-        <span class="material-icons">group</span>
-        <input type="number" id="seats" placeholder="Available seats" min="1" required>
-      </div>
-      <div class="input-group">
-        <span class="material-icons">attach_money</span>
-        <input type="number" id="price" placeholder="Price" required>
-      </div>
-      <button type="submit">Publish</button>
-    </form>
-  </div>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
 
-  <!-- Google Maps Script -->
-  <script>
-    function initMap() {
-      new google.maps.Map(document.getElementById("map"), {
-        center: { lat: 3.848, lng: 11.502 }, // Example: Yaoundé, Cameroon
-        zoom: 13
-      });
-    }
-
-    // Handle form submission
-    document.getElementById("rideForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-      const data = {
-        pickup: document.getElementById("pickup").value,
-        dropoff: document.getElementById("dropoff").value,
-        seats: document.getElementById("seats").value,
-        price: document.getElementById("price").value
-      };
-      console.log("Ride Published:", data);
-      alert("Ride published successfully!");
-    });
-  </script>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
 </body>
 </html>

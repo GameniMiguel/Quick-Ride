@@ -1,0 +1,149 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(#f4ffe6, #c5c51a);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Main container */
+.container {
+  width: 100%;
+  max-width: 400px;
+  background-color: #c5c51a;
+  padding: 20px;
+  border-radius: 10px;
+  min-height: 95vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  position: relative; /* Needed for absolute button placement */
+}
+
+/* Back button */
+.back-btn {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background-color: transparent;
+  border: 2px solid #030303;
+  color: #070707;
+  padding: 8px 16px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Logo */
+.logo {
+  width: 100px;
+  margin: 0 auto 1rem;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #000;
+}
+
+p {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+/* Sign up button */
+.signup-btn {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 2px solid #000;
+  background: transparent;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  color: #000;
+  transition: all 0.3s ease;
+}
+
+.signup-btn:hover {
+  background-color: #000;
+  color: #ffffff;
+}
+
+.signin {
+  font-size: 0.9rem;
+}
+
+.signin a {
+  color: #faf8f8;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.car-img {
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 250px;
+}
+
+/* Medium screen adjustments (tablets) */
+@media (max-width: 768px) {
+  .container {
+    max-width: 90%;
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+
+  .logo {
+    width: 80px;
+  }
+}
+
+/* Small screen adjustments (phones) */
+@media (max-width: 500px) {
+  .container {
+    max-width: 95%;
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+
+  .logo {
+    width: 70px;
+  }
+
+  .signup-btn, .back-btn {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+}

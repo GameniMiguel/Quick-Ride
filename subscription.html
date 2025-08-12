@@ -5,49 +5,58 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Subscription Interface</title>
 <link rel="stylesheet" href="ASSETS/css/subscription.css">
+<script type="module" src=""></script>
+<style>
+    a{
+        text-decoration: none;
+        color: #000;
+    }
+</style>
 </head>
 <body>
 
-<!-- Navigation -->
-<div class="navbar">
-    <span class="hamburger" onclick="openMenu()">&#9776;</span>
-    <div class="nav-icons">
-        <button>🔍</button>
-        <button>🔔</button>
-    </div>
-</div>
-
-<!-- Side Menu -->
-<div id="sideMenu" class="side-menu">
-    <span class="close-btn" onclick="closeMenu()">&times;</span>
-    <a href="landing.html">Home</a>
-    <a href="#">Profile</a>
-    <a href="subscription.html">Subscriptions</a>
-    <a href="#">Settings</a>
-</div>
 
 <!-- Main Content -->
 <div class="container">
+    <header>
+        <button class="back-btn" onclick="goBack()">← Back</button>
+        <script>
+          function goBack() {
+          window.history.back(); // Goes to the previous page
+          }
+        </script>
+        <img src="ASSETS/images/logo.png" alt="QuickRides" class="logo">
+    </header>
+
     <h3>subscribe</h3>
-
+    <br><br>
     <div class="card">
-        <p>7 days free trial</p>
-        <button>Start Now</button>
+       <a href="Googlemap.html"> <p>7 days free trial</p><br>
+        Start Now
+       </a>
     </div>
-
+    <br><br>
     <div class="card">
-        <p>Monthly subscription</p>
+       <a href="paymentM.html"><p>Monthly subscription</p><br>
         <strong>3,000 XAF</strong><br><br>
-        <button>Select</button>
+        Select
+        </a> 
     </div>
-
+    <br><br>
     <div class="card">
-        <p>Yearly subscription</p>
+       <a href="paymentM.html"> <p>Yearly subscription</p><br>
         <strong>30,000 XAF</strong><br><br>
-        <button>Select</button>
+        Select
+       </a>
     </div>
-
+    <br><br>
     <button class="pay-btn"><a href="paymentM.html">Pay Subscription</a></button>
+
+    <div class="bottom-nav">
+        <a href="Home.html" class="active"><i class="fas fa-home"></i><span>Home</span></a>
+        <a href="paymentM.html"><i class="fas fa-gem"></i><span>Payment Method</span></a>
+        <a href="settings.html"><i class="fas fa-cog"></i><span>Settings</span></a>
+    </div>
 </div>
 
 <script>

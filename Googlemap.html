@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Select Destination</title>
+  <link rel="stylesheet" href="ASSETS/css/Googlemap.css" />
+    <style>
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+  <!-- Google Map -->
+  <div id="map"></div>
+
+  <!-- Overlay Card -->
+  <div class="address-card">
+    <div class="drag-indicator"></div>
+    <h2>Select address</h2>
+
+    <div class="location">
+      <span class="icon red">&#128308;</span>
+      <div>
+        <p class="title">Current location</p>
+        <p class="subtitle">203 Westminster Rd, Santa Ana, Illinois 85460</p>
+      </div>
+    </div>
+
+    <div class="location">
+      <span class="icon blue">&#128309;</span>
+      <div>
+        <p class="title">Destination</p>
+        <p class="subtitle">100 Thornridge Cir, Shiloh, Hawaii 81063</p>
+      </div>
+      <span class="distance">1.1 km</span>
+    </div>
+
+    <button class="confirm-btn"><a href="confirm destination.html">Confirm Destination</a></button>
+  </div>
+
+  <!-- Google Maps Script -->
+  <script>
+    function initMap() {
+      const center = { lat: 33.6846, lng: -117.8265 }; // Example coords
+      const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 14,
+        center: center,
+      });
+      new google.maps.Marker({ position: center, map: map });
+    }
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
+  async defer></script>
+</body>
+</html>

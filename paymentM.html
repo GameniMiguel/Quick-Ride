@@ -1,85 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Payment Interface</title>
-<link rel="stylesheet" href="ASSETS/css/paymentM.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Method Interface</title>
+  <link rel="stylesheet" href="ASSETS/css/paymentM.css">
 </head>
 <body>
+  <div class="container">
+    <header>
+      <button class="back-btn" onclick="goBack()">← Back</button>
+      <script>
+        function goBack() {
+        window.history.back(); // Goes to the previous page
+        }
+      </script>
+      <img src="ASSETS/images/logo.png" alt="QuickRides" class="logo">
+  </header>
 
-<!-- Navbar -->
-<div class="navbar">
-    <span class="hamburger" onclick="openMenu()">&#9776;</span>
-</div>
-
-<!-- Side Menu -->
-<div id="sideMenu" class="side-menu">
-    <span class="close-btn" onclick="closeMenu()">&times;</span>
-    <a href="landing.html">Home</a>
-    <a href="#">Profile</a>
-    <a href="paymentM.html">Payments</a>
-    <a href="settings.html">Settings</a>
-</div>
-
-<!-- Main Content -->
-<div class="container">
-    <h3>select payment method</h3>
+    <h3>Select Payment Method</h3>
 
     <div class="payment-card" onclick="openPaymentForm('Orange Money')">
-        <img src="orange-money.png" alt="Orange Money">
-        <div>
-            <p>+237••••••••360</p>
-            <small>Expires: 12/26</small>
-        </div>
+      <img src="ASSETS/images/orang.png" alt="Orange Money">
+      <div><p>+237••••••••360</p><small>Expires: 12/26</small></div>
     </div>
 
     <div class="payment-card" onclick="openPaymentForm('MTN Mobile Money')">
-        <img src="mtn-money.png" alt="MTN Mobile Money">
-        <div>
-            <p>+237••••••••678</p>
-            <small>Expires: 12/26</small>
-        </div>
+      <img src="ASSETS/images/mtn.png" alt="MTN Mobile Money">
+      <div><p>+237••••••••678</p><small>Expires: 12/26</small></div>
     </div>
 
-    <button class="cashout-btn">cashout</button>
-</div>
+    <div class="payment-card" onclick="openPaymentForm('PayPal')">
+        <img src="ASSETS/images/PayPal_Logo.svg" alt="PayPal" class="payment-icon">
+      <div><p>paypal@example.com</p><small>Verified</small></div>
+    </div>
 
-<!-- Payment Form Modal -->
-<div id="paymentModal" class="modal">
+    <div class="payment-card" onclick="openPaymentForm('Binance')">
+        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Binance_Logo.png" alt="Binance" class="payment-icon">   <div><p>Crypto Wallet</p><small>Verified</small></div>
+    </div>
+
+    <button class="cashout-btn">Cashout</button>
+
+    <div class="bottom-nav">
+      <a href="Home.html"><i class="fas fa-home"></i><span>Home</span></a>
+      <a href="subscription.html"><i class="fas fa-gem"></i><span>Subscription</span></a>
+      <a href="settings.html" class="active"><i class="fas fa-cog"></i><span>Settings</span></a>
+    </div>
+  </div>
+
+  <div id="paymentModal" class="modal">
     <div class="modal-content">
-        <span class="close-modal" onclick="closeModal()">&times;</span>
-        <h4 id="paymentTitle"></h4>
-        <form>
-            <label>Account Number</label>
-            <input type="text" placeholder="Enter account number" required>
-            <label>Amount</label>
-            <input type="number" placeholder="Enter amount" required>
-            <label>Password</label>
-            <input type="password" placeholder="Enter password" required>
-            <button type="submit">Confirm Payment</button>
-        </form>
+      <span class="close-modal" onclick="closeModal()">&times;</span>
+      <h4 id="paymentTitle"></h4>
+      <form>
+        <label>Account Name</label><input type="text" placeholder="Enter account name" required>
+        <label>Phone/Email/Wallet ID</label><input type="text" placeholder="Enter details" required>
+        <label>Amount</label><input type="number" placeholder="Enter amount" required>
+        <button type="submit">Confirm Payment</button>
+      </form>
     </div>
-</div>
+  </div>
 
-<script>
-    // Side Menu Functions
-    function openMenu() {
-        document.getElementById("sideMenu").style.width = "250px";
-    }
-    function closeMenu() {
-        document.getElementById("sideMenu").style.width = "0";
-    }
-
-    // Payment Modal Functions
+  <script>
     function openPaymentForm(method) {
-        document.getElementById("paymentTitle").innerText = "Pay with " + method;
-        document.getElementById("paymentModal").style.display = "block";
+      document.getElementById("paymentTitle").innerText = "Pay with " + method;
+      document.getElementById("paymentModal").style.display = "block";
     }
     function closeModal() {
-        document.getElementById("paymentModal").style.display = "none";
+      document.getElementById("paymentModal").style.display = "none";
     }
-</script>
-
+  </script>
 </body>
 </html>
+
+
+

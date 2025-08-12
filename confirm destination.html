@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Confirm Destination</title>
+<link rel="stylesheet" href="ASSETS/css/confirm destination.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>confirm Destination</h2>
+    
+    <div class="input-box">
+        <i class="fa-solid fa-location-dot"></i>
+        <input type="text" placeholder="From" id="from">
+    </div>
+
+    <div class="input-box yellow">
+        <i class="fa-solid fa-map-marker-alt"></i>
+        <input type="text" placeholder="To" id="to">
+    </div>
+
+    <div class="input-box">
+        <i class="fa-solid fa-users"></i>
+        <input type="number" placeholder="Number of people" id="people" min="1">
+    </div>
+
+    <div class="input-box yellow">
+        <input type="text" placeholder="Price" id="price" readonly>
+    </div>
+
+    <button onclick="bookRide()">Book ride</button>
+</div>
+
+<script>
+function bookRide() {
+    let from = document.getElementById("from").value;
+    let to = document.getElementById("to").value;
+    let people = document.getElementById("people").value;
+
+    if (!from || !to || !people) {
+        alert("Please fill in all fields");
+        return;
+    }
+
+    // Example price calculation
+    let price = people * 500; // e.g., 500 per person
+    document.getElementById("price").value = price + " FCFA";
+
+    alert(`Ride booked!\nFrom: ${from}\nTo: ${to}\nPeople: ${people}\nPrice: ${price} FCFA`);
+}
+</script>
+
+</body>
+</html>

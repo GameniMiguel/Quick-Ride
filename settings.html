@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Settings Interface</title>
+<link rel="stylesheet" href="ASSETS/css/settings.css">
+</head>
+<body>
+
+
+<!-- Main Content -->
+<div class="container">
+    <header>
+        <button class="back-btn" onclick="goBack()">← Back</button>
+        <script>
+          function goBack() {
+          window.history.back(); // Goes to the previous page
+          }
+        </script>
+        <img src="ASSETS/images/logo.png" alt="QuickRides" class="logo">
+    </header>
+
+    <h3>Settings</h3>
+    <div class="settings-item">
+        Change Password
+        <span class="arrow">&#8250;</span>
+    </div>
+
+    <div class="settings-item">
+        Change Language
+        <span class="arrow">&#8250;</span>
+    </div>
+
+    <div class="settings-item">
+        Edit Profile
+        <span class="arrow">&#8250;</span>
+    </div>
+
+    <div class="settings-item white">
+        Contact Us
+        <span class="arrow">&#8250;</span>
+    </div>
+
+    <div class="bottom-nav">
+        <a href="Home.html" class="active"><i class="fas fa-home"></i><span>Home</span></a>
+        <a href="paymentM.html"><i class="fas fa-gem"></i><span>Payment</span></a>
+        <a href="subscription.html"><i class="fas fa-cog"></i><span>Subscription</span></a>
+    </div>
+
+</div>
+
+<script>
+    function openMenu() {
+        document.getElementById("sideMenu").style.width = "250px";
+    }
+    function closeMenu() {
+        document.getElementById("sideMenu").style.width = "0";
+    }
+</script>
+
+</body>
+</html>
